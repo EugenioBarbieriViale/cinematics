@@ -6,7 +6,7 @@ clock = pygame.time.Clock()
 screenx,screeny = 1000,800
 
 window = pygame.display.set_mode([screenx,screeny])
-pygame.display.set_caption("Gravity simulator")
+pygame.display.set_caption("Cinematics")
 
 vel = pygame.math.Vector2(0)
 obj_pos = pygame.math.Vector2(screenx/2, screeny/2)
