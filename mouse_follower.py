@@ -49,9 +49,9 @@ while True:
     screen.blit(label_v, (10,30))
     screen.blit(label_a, (10,50))
 
-    R -= 1
-    G -= 1
-    B -= 1
+    # R -= 1
+    # G -= 1
+    # B -= 1
 
     pygame.display.flip()
     clock.tick(60)
