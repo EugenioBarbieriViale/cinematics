@@ -1,36 +1,38 @@
 void setup() {
-  size(900,800);
+  size(900,700);
 }
 
-float x = 450;
-float y = 400;
+float xi = 200;
+float yi = 350;
 
 float vel = 0;
 float acc = 1;
 float ang = 0;
 
-int r = 200;
-float[] positions = new float[10000];
-float[] positions1 = new float[10000];
-
-public class Trail {
-  public Trail(float x, float y, float ang) {
-    float x_ = x;
-    float y_ = y;
-    float ang_ = ang;
-  }
-}
-
+int r = 100;
+float startx = xi + r + 50;
 
 void draw() {
   background(212);
+  
+  ang -= 0.01;
+  float x = cos(ang)*r + xi;
+  float y = sin(ang)*r + yi;
+  
   strokeWeight(3);
-  circle(x,y,50);
-  line(x,30,x,y);
+  noFill();
+  circle(xi,yi,r*2);
   
-  ang += 0.05;
-  y = cos(ang)*r + 400;
+  fill(255);
   
-  positions1 = append(positions, y);
-  println(positions1);
+  circle(xi,yi,5);
+  line(xi-r,yi,xi+r,yi);
+  line(xi,yi+r,xi,yi-r);
+  
+  circle(x,y,20);
+  circle(startx,y,10);
+  startx += 0.5;
+  
+  strokeWeight(1);
+  line(x,y,startx,y);
 }
